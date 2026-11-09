@@ -69,6 +69,10 @@ Everything below is in `content.js`.
 }
 ```
 
+## Link preview
+
+To show a preview card when the link is shared (Discord, Telegram, Facebook...), edit the `<meta>` tags in the `<head>` of **both** `index.html` and `404.html`: update the title, description, URL and image. Put a preview image (about 1200×630) at `images/preview.png`. The URL and image must be full `https://` links. The preview is the same for the whole site, not per post.
+
 ## Deploy
 
 Built for a GitHub Pages user site (`username.github.io`). Upload everything (`index.html`, `404.html`, `content.js`, `app.js`, `style.css`, `images/`, `music/`) to the root of the repository.
