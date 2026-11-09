@@ -80,5 +80,7 @@ If a change does not show up, hard refresh with Ctrl+F5.
 ## Credits & Copyright
 
 - I do not own the songs used on this site. All rights to the music belong to **[Sappheiros](https://www.youtube.com/@Sappheiros)**.
+- Many images on this site (song covers, backgrounds) come from Sappheiros's videos. I do not own them. All rights belong to their original creators. The avatar and a few other images are my own.
+- If you are a rights holder and want something removed, contact [me](https://discord.com/users/806381990198771724) or [email](mailto:nemeiros8450@outlook.com) and I will take it down.
 - Made by Nemeiros with Claude AI.
 - Brand icons from [Simple Icons](https://simpleicons.org/). **Font:** [Figtree](https://fonts.google.com/specimen/Figtree).
