@@ -1,6 +1,6 @@
 # Seiros
 
-A simple personal profile page with a "click to enter" screen, a music player, snow/rain effects and a small blog. One `index.html`, no build step, no dependencies.
+A simple personal profile page with a "click to enter" screen, a music player, snow/rain effects and a small blog. Plain HTML, CSS and JavaScript: no build step, no dependencies.
 
 ## Features
 
@@ -8,22 +8,37 @@ A simple personal profile page with a "click to enter" screen, a music player, s
 - Music player with cover, seek bar and previous/next
 - Snow or rain effect
 - Writing section with pinned posts, "Latest" list and reading time
+- Clean addresses: `/` (home), `/blog` (all posts), `/blog/post-id` (one post)
 - Glow text, social icons, custom background
 
 ## Quick start
 
-1. Keep `index.html`, `images/` and `music/` in the same folder.
-2. Open `index.html` in your browser.
-3. Edit the `CONFIG` object at the top of the script to make it yours.
+1. Keep all files and folders below in the same place.
+2. Edit **`content.js`** to make it yours (profile, music, posts).
+3. Serve the folder with a server that falls back to `404.html` for unknown addresses, for example:
+
+   ```bash
+   npx serve -s
+   ```
+
+   Opening `index.html` directly also works, but the address bar will not change when you move between pages.
 
 ```text
 seiros/
-├── index.html
-├── images/    # avatar, background, covers
-└── music/     # .mp3 files
+├── index.html     # page shell (identical to 404.html)
+├── 404.html       # same as index.html, makes /blog and /blog/post-id work
+├── content.js     # your content: profile, music, posts (edit this)
+├── app.js         # the code that runs the page
+├── style.css      # the look
+├── images/        # avatar, background, covers
+└── music/         # .mp3 files
 ```
 
+`index.html` and `404.html` must stay identical. You rarely need to touch them, because all the content lives in `content.js`.
+
 ## Configuration
+
+Everything below is in `content.js`.
 
 | Key | What it does |
 | --- | --- |
@@ -45,7 +60,7 @@ seiros/
 
 ```js
 {
-  id: "hello",
+  id: "hello",                 // used in the address: /blog/hello
   ts: Date.UTC(2026, 10, 8),   // month starts at 0
   title: "Hello",
   pinned: true,                // optional, max 2
@@ -56,10 +71,14 @@ seiros/
 
 ## Deploy
 
-Upload the whole folder (`index.html`, `images/`, `music/`) to GitHub Pages, Netlify Drop or Cloudflare Pages.
+Built for a GitHub Pages user site (`username.github.io`). Upload everything (`index.html`, `404.html`, `content.js`, `app.js`, `style.css`, `images/`, `music/`) to the root of the repository.
+
+`404.html` is what makes direct links like `/blog` work when someone opens them or refreshes the page. Without it, GitHub shows its own 404 page. Other hosts (Netlify, Cloudflare Pages) can host the files too, but may need their own setting for unknown addresses.
+
+If a change does not show up, hard refresh with Ctrl+F5.
 
 ## Credits & Copyright
 
 - I do not own the songs used on this site. All rights to the music belong to **[Sappheiros](https://www.youtube.com/@Sappheiros)**.
 - Made by Nemeiros with Claude AI.
-- brand icons from [Simple Icons](https://simpleicons.org/). **Font:** [Figtree](https://fonts.google.com/specimen/Figtree).
+- Brand icons from [Simple Icons](https://simpleicons.org/). **Font:** [Figtree](https://fonts.google.com/specimen/Figtree).
