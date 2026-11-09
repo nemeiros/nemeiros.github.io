@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="/">
+<link rel="icon" type="image/png" href="nemeiros_icon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nemeiros</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="gated">
+<div id="bg"></div>
+<div id="gate" role="button" tabindex="0" aria-label="Enter site"><div class="gate-in"><div class="gate-name" id="gname"></div><div class="gate-hint" id="ghint"></div></div></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<main>
+  <header>
+    <div class="av" id="av"></div>
+    <b id="name"></b>
+    <a href="/blog" id="wl">Bài viết</a>
+  </header>
+
+  <div id="home">
+    <div class="hero">
+      <h1>Chao xìnn</h1>
+      <p class="bio" id="bio"></p>
+      <div class="chips" id="chips"></div>
+      <nav class="soc" id="soc" aria-label="Social links"></nav>
+    </div>
+    <section>
+      <h2>Nhạc</h2>
+      <div class="pl">
+        <div class="cv" id="cv"></div>
+        <div class="pm">
+          <div class="ti" id="ti"></div>
+          <div class="row">
+            <span class="tm" id="t1">0:00</span>
+            <input class="sk" id="sk" type="range" min="0" max="1000" value="0" aria-label="Seek">
+            <span class="tm" id="t2">--:--</span>
+            <div class="ctl">
+              <button id="pv" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+              <button id="pp" class="pp" aria-label="Play"></button>
+              <button id="nx" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="pinsec" hidden>
+      <h2>Bài viết được ghim</h2>
+      <div id="pinned"></div>
+    </section>
+    <section id="latsec">
+      <h2>Bài viết mới nhất</h2>
+      <div id="latest"></div>
+      <a class="more" href="/blog">Toàn bộ bài viết →</a>
+    </section>
+  </div>
+
+  <div id="writing" hidden>
+    <section style="margin-top:56px">
+      <h2>Bài viết</h2>
+      <div id="posts"></div>
+      <a class="more" href="/" style="margin-top:0">← Quay lại</a>
+    </section>
+  </div>
+
+  <div id="post" hidden>
+    <section style="margin-top:56px">
+      <div class="full" id="full"></div>
+      <a class="more" href="/blog" style="margin-top:8px">← Toàn bộ bài viết</a>
+    </section>
+  </div>
+
+  <footer>nemeiros · Camonvidaden</footer>
+
+</main>
+<audio id="au" preload="metadata"></audio>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
