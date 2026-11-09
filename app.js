@@ -23,7 +23,8 @@ $('name').textContent=CONFIG.name;
 $('bio').textContent=CONFIG.bio;
 $('av').innerHTML=CONFIG.avatar?'<img class="av" alt="" src="'+esc(CONFIG.avatar)+'">':esc(CONFIG.name[0]);
 $('chips').innerHTML=CONFIG.chips.map(c=>'<span class="chip">'+svg(c[0])+esc(c[1])+'</span>').join('');
-$('soc').innerHTML=CONFIG.socials.map(s=>'<a href="'+esc(s[1])+'" target="_blank" rel="noopener" aria-label="'+s[0]+'">'+svg(s[0])+'</a>').join('');
+const SOC_NAMES={github:'GitHub',discord:'Discord',patreon:'Patreon',steam:'Steam'};
+$('soc').innerHTML=CONFIG.socials.map(s=>'<a href="'+esc(s[1])+'" target="_blank" rel="noopener" aria-label="'+s[0]+'" data-tip="'+(SOC_NAMES[s[0]]||s[0])+'">'+svg(s[0])+'</a>').join('');
 if(CONFIG.background){$('bg').style.setProperty('--bgimg','url("'+CONFIG.background+'")');document.documentElement.style.setProperty('--dim','.6');}
 
 /* ---- music ---- */
